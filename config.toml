@@ -1,0 +1,50 @@
+baseURL = 'http://kim-tynes.github.io/'
+languageCode = 'en-us'
+title = "Kim Tynes"
+theme = "m10c"
+author = "Kim Tynes"
+description = ''
+avatar = '/avatar.jpg'
+menu_item_separator = ' &#183; '
+favicon = ''
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/home"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    weight = 3
+  [[menu.main]]
+    identifier = "resume"
+    name = "Resume"
+    url = "/resume"
+    weight = 4
+  [[menu.main]]
+    identifier = "portfolio"
+    name = "Portfolio"
+    url = "/portfolio/"
+    weight = 5
+  [[menu.main]]
+    identifier = "challenge"
+    name = "Challenges"
+    url = "/challenge/"
+    weight = 6
+
+[params]
+  author = "Kim Tynes"
+  description = "Analyst | IT Support"
+  menu_item_separator = " &#183; "
+  [[params.social]]
+    icon = "github"
+    name = "Github"
+    url = "https://github.com/kim-tynes"

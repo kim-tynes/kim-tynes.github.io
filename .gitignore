@@ -1,0 +1,7 @@
+/public
+./index.md
+gitpush
+.gitlab-ci.yml
+/public
+.hugo_build.lock
+themes/
