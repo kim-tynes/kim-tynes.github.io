@@ -5,12 +5,12 @@ draft: false
 ---
 
 ## Work Experience
-__IT Project Assistant, Cres Cor__  Aug 2022 - Mar 2023
+__IT Project Assistant, Cres Cor__  2022 - 2023
 
 Create and manage user accounts. Create and manage Excel spreadsheets. Educate users about proper software and 
 hardware usage. Troubleshoot network, hardware, and software issues via telephone, email, remote, and in-person.
 
-__Data Entry Operator, Adecco__  Oct 2020 - Aug 2021
+__Data Entry Operator, Adecco__  2020 - 2021
 
 Prepare, sort, and organize files. Verify readability and accuracy of data entry.
 
