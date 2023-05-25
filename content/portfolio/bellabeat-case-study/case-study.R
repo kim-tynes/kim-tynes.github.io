@@ -13,9 +13,9 @@ options(scipen=9999)
 #
 ## LOAD THE DATA ####
 #
-sleep_data <- import("/home/tion/docs/analytics/certification/google-certificate/course8/data/sleepDay_merged.csv")
-activity_data <- import("/home/tion/docs/analytics/certification/google-certificate/course8/data/dailyActivity_merged.csv")
-station_data <- import("/home/tion/docs/analytics/certification/google-certificate/course8/data/activity-data.csv")
+sleep_data <- import("sleepDay_merged.csv")
+activity_data <- import("dailyActivity_merged.csv")
+station_data <- import("activity-data.csv")
 
 #
 ## EXAMINE THE DATA ####
