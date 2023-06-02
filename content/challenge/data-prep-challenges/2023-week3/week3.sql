@@ -116,12 +116,12 @@ WHERE online_or_in_person == 2;
 UPDATE targets
 SET quarterly_targets = 72500
 WHERE quarter == 1 
-	AND online_or_in_person == 'Online'
+	AND online_or_in_person == 'Online';
 
 UPDATE targets
 SET quarterly_targets = 75000
 WHERE quarter == 1 
-	AND online_or_in_person == 'In-Person'
+	AND online_or_in_person == 'In-Person';
 
 INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
 VALUES ('Online',NULL,NULL,NULL,NULL,2, 70000);
