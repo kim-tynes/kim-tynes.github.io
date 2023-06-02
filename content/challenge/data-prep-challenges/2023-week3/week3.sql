@@ -24,7 +24,7 @@ SELECT online_or_in_person
 FROM week1
 WHERE online_or_in_person == 2;
 
--- Update OnlineorIn-Person column 
+-- Update online_or_in_person column 
 -- Replace 1 with "Online" and 2 with "In-Person"
 UPDATE week1
 SET online_or_in_person = "Online"
@@ -76,9 +76,9 @@ SELECT transaction_code,
 	CAST(online_or_in_person as TEXT) online_or_in_person, 
 	quarter
 FROM (SELECT transaction_code,
-	value,
-	online_or_in_person,
-	quarter
+		value,
+		online_or_in_person,
+		quarter
 	FROM week1
 	WHERE transaction_code LIKE "DSB%"
 	) sub
@@ -87,12 +87,12 @@ GROUP BY online_or_in_person, quarter;
 -- Pivot the quarterly targets so we have a row for each 
 --  Type of Transaction and each Quarter
 --
--- Use targets_cleaned in the meantime
 -- Clean column names
 ALTER TABLE targets ADD COLUMN quarter INT;
 ALTER TABLE targets ADD COLUMN quarterly_targets INT;
 ALTER TABLE targets RENAME COLUMN `OnlineorIn-Person` TO online_or_in_person;
 
+-- Pivot Q1 data
 SELECT Q1
 FROM targets
 WHERE online_or_in_person == "Online";
@@ -123,6 +123,7 @@ SET quarterly_targets = 75000
 WHERE quarter == 1 
 	AND online_or_in_person == 'In-Person';
 
+-- Pivot Q2, Q3, and Q4 data
 INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
 VALUES ('Online',NULL,NULL,NULL,NULL,2, 70000);
 INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
@@ -136,12 +137,13 @@ VALUES ('Online',NULL,NULL,NULL,NULL,4, 60000);
 INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
 VALUES ('In-Person',NULL,NULL,NULL,NULL,4, 60000);
 
+-- Remove unnecessary columns from Targets data table
 ALTER TABLE targets DROP COLUMN Q1;
 ALTER TABLE targets DROP COLUMN Q2;
 ALTER TABLE targets DROP COLUMN Q3;
 ALTER TABLE targets DROP COLUMN Q4;
 
--- Join the two datasets together
+-- Join the two datasets together: Targets and week1
 SELECT w1.quarter,
 	w1.value,
 	w1.online_or_in_person,
