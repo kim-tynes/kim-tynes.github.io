@@ -88,11 +88,58 @@ GROUP BY online_or_in_person, quarter;
 --  Type of Transaction and each Quarter
 --
 -- Use targets_cleaned in the meantime
+-- Clean column names
+ALTER TABLE targets ADD COLUMN quarter INT;
+ALTER TABLE targets ADD COLUMN quarterly_targets INT;
+ALTER TABLE targets RENAME COLUMN `OnlineorIn-Person` TO online_or_in_person;
 
--- CLean targets_cleaned column names
-ALTER TABLE targets_cleaned RENAME COLUMN QuarterlyTargets TO quarterly_targets;
-ALTER TABLE targets_cleaned RENAME COLUMN `OnlineorIn-Person` TO online_or_in_person;
-ALTER TABLE targets_cleaned RENAME COLUMN Quarter TO quarter;
+SELECT Q1
+FROM targets
+WHERE online_or_in_person == "Online";
+
+UPDATE targets
+SET quarter = 1
+WHERE online_or_in_person IS NOT NULL;
+
+UPDATE targets
+SET quarterly_targets = Q1
+WHERE online_or_in_person == 'Online';
+
+UPDATE targets
+SET quarterly_targets = Q1
+WHERE online_or_in_person == 'In-Person';
+
+UPDATE targets
+SET online_or_in_person = 'Online', quarter = 2
+WHERE online_or_in_person == 2;
+
+UPDATE targets
+SET quarterly_targets = 72500
+WHERE quarter == 1 
+	AND online_or_in_person == 'Online'
+
+UPDATE targets
+SET quarterly_targets = 75000
+WHERE quarter == 1 
+	AND online_or_in_person == 'In-Person'
+
+INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
+VALUES ('Online',NULL,NULL,NULL,NULL,2, 70000);
+INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
+VALUES ('In-Person', NULL, NULL, NULL, NULL, 2, 70000);
+INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
+VALUES ('Online',NULL,NULL,NULL,NULL,3, 60000);
+INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
+VALUES ('In-Person',NULL,NULL,NULL,NULL,3, 70000);
+INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
+VALUES ('Online',NULL,NULL,NULL,NULL,4, 60000);
+INSERT INTO targets (online_or_in_person, Q1, Q2, Q3, Q4, quarter, quarterly_targets)
+VALUES ('In-Person',NULL,NULL,NULL,NULL,4, 60000);
+
+ALTER TABLE targets DROP COLUMN Q1;
+ALTER TABLE targets DROP COLUMN Q2;
+ALTER TABLE targets DROP COLUMN Q3;
+ALTER TABLE targets DROP COLUMN Q4;
 
 -- Join the two datasets together
 SELECT w1.quarter,
@@ -112,9 +159,9 @@ SELECT online_or_in_person,
 	quarterly_targets,
 	(value - quarterly_targets) variance_to_target
 FROM (SELECT w1.quarter,
-	w1.value,
-	w1.online_or_in_person,
-	tc.quarterly_targets
+		w1.value,
+		w1.online_or_in_person,
+		tc.quarterly_targets
 	FROM week1view w1
 	JOIN targets_cleaned tc
 		ON w1.quarter = tc.quarter
