@@ -40,9 +40,9 @@ data11 <- clean_names(data11)
 data12 <- clean_names(data12)
 
 data10 <- data10 |>
-  rename(demographic = demagraphic)
+  dplyr::rename(demographic = demagraphic)
 data08 <- data08 |>
-  rename(demographic = demographiic)
+  dplyr::rename(demographic = demographiic)
 
 #
 ## CREATE JOINING DATE FIELD ####
