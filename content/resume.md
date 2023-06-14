@@ -27,10 +27,11 @@ __Bachelor of Science in Computer Science__, George Mason University
 - Able to learn new skills and processes
 - Documenting issues and processes
 - Train users
-- Organization skills
+- Strong organization skills
 - Analytical skills
 - Troubleshooting skills
 - Communication skills
-- Office 365 (Word, Excel, Outlook, Teams) and Google Suite (Docs, Sheets, Gmail)
-- SQL, R, Tableau
+- Proficient with Office 365 (Word, Excel, Outlook, Teams) and Google Suite (Docs, Sheets, Gmail)
+- Experience with SQL, R, Tableau, Infor Syteline ERP
+- Exposure to Python, git
 
