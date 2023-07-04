@@ -22,7 +22,7 @@ The packages used for this project include:
   - rnaturalearthdata
 
 ### Install the needed packages.
-```{r}
+```
 if(!require("tidyverse")) {
 	install.packages("tidyverse")
 }
@@ -47,7 +47,7 @@ if(!require("rnaturalearthdata")) {
 ```
 
 ### Load the necessary packages into session.
-```{r}
+```
 library(tidyverse)
 library(ggplot2)
 library(ggspatial)
@@ -62,20 +62,20 @@ I used the freely available datasets [here](https://ourworldindata.org/covid-dea
 
 ## Data Analysis
 ### Load the dataset into R environment.
-```{r}
+```
 dataset <- read.csv("owid-covid-data.csv")
 ```
 
 
 ### Examine the dataset.
-```{r}
+```
 head(dataset)
 str(dataset)
 colnames(dataset)
 ```
 
 ### Examine the total cases compared to the total deaths in Canada.
-```{r}
+```
 a <- dataset %>%
   filter(location == "Canada") %>%
   select(location, date, total_cases, total_deaths) %>%
@@ -103,7 +103,7 @@ ggplot(a, aes(total_cases, total_deaths, color = deathPercentage)) +
 
 
 ### Examine total cases compared to population in Canada.
-```{r}
+```
 gotCovid <- dataset %>%
   filter(location == "Canada") %>%
   select(location, date, population, total_cases) %>%
@@ -125,7 +125,7 @@ ggplot(gotCovid, aes(total_cases, percent_population_infected)) +
 
 ### Examine infection rate compared to population between the countries.
 For this examination, I ended up using SQL as I experienced numerous issues using R to filter by location while removing NA values. I will need to research this for future reference. Exported the SQL query results to a CSV file which is imported in the below code.
-```{sql}
+```
 SELECT cd.location, 
 	cd.population,
 	MAX(cd.total_cases) AS highest_infection_count, 
@@ -135,7 +135,7 @@ GROUP BY cd.location, cd.population
 ORDER BY percent_population_infected DESC 
 ```
 
-```{r}
+```
 infectionRate <- read.csv("infection-count.csv")
 g <- infectionRate %>%
   #filter(!is.na(highest_infection_count) | !is.na(percent_population_infected)) %>%
@@ -181,7 +181,7 @@ ggplot() +
 ![Map of Infection Rate Across Countries](../../covid/infectionRate.png)
 
 ### Examine countries with highest death count compared to population.
-```{sql}
+```
 SELECT cd.location, 
 	MAX(CAST(cd.total_deaths AS int)) AS total_death_count 
 FROM covid_data cd 
@@ -190,7 +190,7 @@ GROUP BY cd.location
 ORDER BY total_death_count DESC 
 ```
 
-```{r}
+```
 deathCount <- read.csv("death-by-country.csv")
 
 # Prepare data or map plot

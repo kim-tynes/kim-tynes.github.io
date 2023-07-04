@@ -10,7 +10,6 @@ tags:
 ---
 
 ![](../report.gif)
-[](https://github.com/kim-tynes/EnergySourcesPortfolioProject/blob/main/report.gif)
 
 ## The Data
 The data was obtained from [Our World in Data website](https://ourworldindata.org/explorers/energy). I used the available ```owid-energy-data.csv``` file as source data to be imported into SQL database.

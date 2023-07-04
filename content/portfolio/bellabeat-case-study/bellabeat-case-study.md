@@ -54,7 +54,7 @@ The R code used for the data cleaning and analysis process can be found
 The SQL code used to populate ```activity-data.csv``` for a portion of the data 
 cleaning:
 
-```{sql}
+```
 SELECT Id,
 	SUM(VeryActiveMinutes) AS TotalVeryActiveMinutes,
 	SUM(SedentaryMinutes) AS TotalSedentaryMinutes
