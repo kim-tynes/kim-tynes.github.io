@@ -1,7 +1,7 @@
 ---
 title: "SVM Project"
 date: 2023-08-15T18:04:51-04:00
-draft: true
+draft: false
 tags:
  - Python
  - ML
