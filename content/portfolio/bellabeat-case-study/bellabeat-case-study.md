@@ -1,7 +1,7 @@
 ---
 title: "Bellabeat Case Study"
 date: 2023-05-25T10:22:55-04:00
-draft: false
+draft: true
 tags:
  - R
  - SQL
