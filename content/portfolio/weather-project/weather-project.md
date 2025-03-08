@@ -9,6 +9,9 @@ tags:
  - API
 ---
 
+The purpose of this project is to keep track of weather 
+conditions for specific locations, and to analyze weather 
+trends for those areas..
 
 ## Environment Setup
 This project utilizes Python and SQLite.
