@@ -6,4 +6,5 @@ draft: false
 
 ### Welcome
 
-I am Kim, a Data Analyst from the US currently seeking growth opportunities.
+I am Kim, a Technical Support Representative from the US 
+currently seeking growth opportunities.

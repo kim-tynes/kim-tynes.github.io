@@ -8,7 +8,7 @@ draft: false
 __Field Support Technician, TEKsystems__ 2023
 
 Provide basic help desk resolution and service for Windows-based 
-computers in a classroom setting. Respond to in-person requests 
+computers in an online learning setting. Respond to in-person requests 
 for assistance with software and hardware issues. Escalate 
 course-specific issues and incidents to a higher support tier.
 
@@ -28,6 +28,13 @@ __Google IT Support Certificate__, Google
 __Bachelor of Science in Computer Science__, George Mason University
 
 ## Skills
+- Attention to detail
+- Able to learn new skills and processes
+- Documenting issues and processes
+- Strong organizational skills
+- Problem solving skills
+- Communication skills
+- Analysis skills
 - Office 365 (Word, Excel, Outlook, Teams)
 - Google Suite (Docs, Sheets, Gmail)
 - SQL (SQLite, MySQL), R, Python (Pandas, Numpy, Scikit), Tableau
