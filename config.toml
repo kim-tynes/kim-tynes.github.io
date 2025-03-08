@@ -42,9 +42,10 @@ favicon = ''
 
 [params]
   author = "Kim Tynes"
-  description = "Analyst | IT Support"
+  description = "Analytics | IT Support"
   menu_item_separator = " &#183; "
   [[params.social]]
     icon = "github"
     name = "Github"
-    url = "https://github.com/kim-tynes"
+#    url = "https://github.com/kim-tynes"
+	url = "https://www.codeberg.org/tion"
